@@ -5,11 +5,15 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px 20px 20px 20px;
+  border-radius: 10px;
+  background-color: #ea5455;
   div {
     width: 70%;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+
+    margin-top: 20px;
   }
 
   label {
@@ -37,7 +41,11 @@ const FormStyled = styled.form`
     width: 100px;
     height: 30px;
     align-self: flex-end;
-    margin-top: 20px;
+    margin: 20px 0px;
+    border-radius: 10px;
+    &:hover {
+      background: #fccf31;
+    }
   }
 `;
 
@@ -88,7 +96,7 @@ const Form = ({ createContact }) => {
 
   return (
     <FormStyled onSubmit={onSubmit}>
-      {error && <h1>All fields are required</h1>}
+      {error ? <h1>All fields are required</h1> : <h1>FORM</h1>}
       <div>
         <label>Name</label>
         <input

@@ -8,11 +8,22 @@ const AppStyled = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
+  height: 100vh;
   h1 {
     grid-column-start: 1;
     grid-column-end: -1;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  @media screen and (max-width: 600px) {
+    form {
+      grid-column: 1/-1;
+    }
+
+    div {
+      grid-column: 1/-1;
+    }
   }
 `;
 

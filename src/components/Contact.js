@@ -1,21 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 
-const ContactStyled = styled.div``;
+const ContactStyled = styled.div`
+  background-color: #fccf31;
+  border-radius: 10px;
+  padding: 10px;
+  p {
+    margin: 5px;
+  }
+  button {
+    border-radius: 10px;
+    background: #f55555;
+    color: white;
+    &:hover {
+      background: red;
+    }
+  }
+`;
 const Contact = ({ contact, deleteContact }) => {
   return (
     <ContactStyled>
       <p>
-        Name: <span>{contact.name}</span>
+        <strong>Name:</strong> <span>{contact.name}</span>
       </p>
       <p>
-        email: <span>{contact.email}</span>
+        <strong>email:</strong>
+        <span>{contact.email}</span>
       </p>
       <p>
-        subject: <span>{contact.suject}</span>
+        <strong>subject:</strong>
+        <span>{contact.suject}</span>
       </p>
       <p>
-        description: <span>{contact.description}</span>
+        <strong>description:</strong>
+        <span>{contact.description}</span>
       </p>
 
       <button onClick={() => deleteContact(contact.id)}>Eliminar</button>
