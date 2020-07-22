@@ -41,7 +41,7 @@ const FormStyled = styled.form`
   }
 `;
 
-const Form = (props) => {
+const Form = ({ createContact }) => {
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
@@ -63,9 +63,20 @@ const Form = (props) => {
     ) {
       setError(true);
       return;
-    } else {
-      setError(false);
     }
+
+    setError(false);
+
+    contactData.id = Math.random().toString(36).substr(2, 9);
+
+    createContact(contactData);
+
+    setContactData({
+      name: "",
+      email: "",
+      subject: "",
+      description: "",
+    });
   };
 
   const updateState = (e) => {
